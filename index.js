@@ -105,8 +105,16 @@ btn6.onclick = function() {
 var btn7 = dom("btn7");
 var sorted_array = dom("sorted_array");
 btn7.onclick = function() {
-    var sorted = arr.sort();
-    sorted_array.innerHTML = sorted;
+    for (i = 0; i < arr.length - 1; i ++) {
+        for (j = i + 1; j < arr.length; j ++) {
+            if (arr[i] > arr[j]) {
+                var tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+        }
+    }
+    sorted_array.innerHTML = arr;
 }
 
 // Tìm số nguyên tố đầu tiên trong mảng
